@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // create ninja Schema & model
-const NinjaSchema = new Schema({
+const NinjaSchema = new Schema
+({
     name: {
         type: String,
         required: [true, 'Name field is required']
@@ -10,9 +11,16 @@ const NinjaSchema = new Schema({
     lastname: {
         type: String
     },
-    available: {
-        type: Boolean,
-        default: false
+    email: {
+        type: String,
+        required: [true, 'Email field is required']
+    },
+    password:{
+        type:String,
+        required: [true, 'password field is required']
+    },
+    gender:{
+        type:String
     }
     // add in geo location
 });
@@ -20,3 +28,5 @@ const NinjaSchema = new Schema({
 const Ninja = mongoose.model('ninja', NinjaSchema);
 
 module.exports = Ninja;
+
+
